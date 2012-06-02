@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% load i18n %}
+
+{% block title %} Login {% endblock %}
+
+{% block container %}
+	{% if form.errors %}
+    	<p class="error">{% trans "Sorry, that's not a valid username or password" %}</p>
+  	{% endif %}
+  	<div class="login" >
+		<div id="header"> {% trans 'Login' %} </div>
+
+		<div id="content">
+		<form action="." method="post">
+			{% csrf_token %}
+
+			<div class="form-item">
+			<label>{% trans 'Username:' %}</label>
+			<input type="text" name="username" maxlength="30"/>
+			</div>
+			<div class="form-item">
+			<label>{% trans 'Password:' %} </label>
+			<input type="password" name="password" maxlength="30">
+			</div>
+			{% if next %}
+			<input type="hidden" name="next" value={{next}}>
+			{% else %}
+			<input type="hidden" name="next" value="/home">
+			{% endif %}
+			<input type="submit" value="{% trans 'Log in' %}">
+		</form>
+		</div>
+	</div>
+{% endblock %}

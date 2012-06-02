@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load i18n %}
+
+{% block nav %} {% endblock %}
+{% block title %} Home Page {% endblock %}
+{% block content %}
+	  <h1> {% blocktrans %}  Hello {{ name }}  {% endblocktrans %}</h1>
+        <ul>
+        {% for product in products %}
+        <li>
+			{{ product.name }}
+        </li>
+        {% endfor %}
+        </ul>
+{% endblock %}

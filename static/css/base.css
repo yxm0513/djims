@@ -1,0 +1,36 @@
+body {
+	background: eee;
+	color:#333333;
+  	font-family:'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
+  	font-size: 12px;
+}
+
+.login {
+	border: 1px solid #CCCCCC;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	min-width:300px;
+  	width:28em;
+}
+
+.login #header {
+	background-color: #417690;
+	color: #FFFFCC;
+	line-height: 1.8em;
+	font-size: 1.7em;
+	vertical-align: middle;
+}
+
+.login #content {
+	margin: 10px 15px;
+}
+
+.login .form-item {
+	margin: 4px auto;
+	pending: 0 10px;
+}
+
+.form-item labal {
+	text-align:right;
+}

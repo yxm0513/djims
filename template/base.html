@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:"en-us" }}" xml:lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<head>
+<title>
+{% load i18n %}
+	{% block title %} IMS {% endblock %}
+</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.css" />
+	<!--
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap-responsive.css" />
+	<style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    -->
+</head>
+<body>
+
+{% block container %}
+
+{% block nav %}
+	<div class="navbar navbar-fixed-top">
+	<a class="brand" href="#">Project name</a>
+	<div class="nav-collapse">
+		<ul class="nav">
+			<li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+			<li><a href={% url login %}>login</a></li>
+			<li><a href={% url logout %}>logout</a></li>
+		</ul>
+	</div>
+
+	</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+			<div class="span4">
+			{% block left %}
+				left
+			{% endblock %}
+			</div>
+
+			<div class="span12">
+			{% block right %}
+				right
+			{% endblock %}
+
+			</div>
+
+	</div>
+</div>
+{% endblock %}
+
+{% endblock %}
+</body>
+</html>
+
+
